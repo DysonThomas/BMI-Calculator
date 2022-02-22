@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'reusablecards.dart';
 import 'constant.dart';
 import 'calculator_bmi.dart';
+import 'package:bmi_calculator/result.dart';
 
 const activecardColours = Color(0xFF1D1E33);
 const inactivecardColours = Color(0xFF111328);
@@ -243,7 +244,15 @@ class _InputPageState extends State<InputPage> {
             onTap: () {
               calculator_bmi calc =
                   calculator_bmi(height: height, weight: weight);
-              Navigator.pushNamed(context, '/result');
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ResultPage(
+                      bmiResult: calc.calculateBmi(),
+                      resultText: calc.getResult(),
+                      interpretation: calc.getInterpretation(),
+                    ),
+                  ));
             },
             child: Container(
               child: Center(
