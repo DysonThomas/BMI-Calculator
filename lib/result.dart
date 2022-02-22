@@ -33,7 +33,7 @@ class ResultPage extends StatelessWidget {
             child: Text(
               bmiResult,
               style: TextStyle(
-                color: Colors.green,
+                color: Color(0xFF24D876),
                 fontSize: 40.0,
               ),
             ),
@@ -42,7 +42,7 @@ class ResultPage extends StatelessWidget {
             child: Text(
               'Normal',
               style: TextStyle(
-                color: Colors.green,
+                color: Color(0xFF24D876),
                 fontSize: 20.0,
               ),
             ),
